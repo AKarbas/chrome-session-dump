@@ -1,5 +1,5 @@
 all:
-	-mkdir bin
+	mkdir -p bin
 	go build -o bin/chrome-session-dump *.go
 install:
 	install -m755 bin/chrome-session-dump /usr/bin
