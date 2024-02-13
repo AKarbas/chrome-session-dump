@@ -532,6 +532,10 @@ default
 		target = os.ExpandEnv("$HOME/.config/chrome")
 	}
 
+	if _, err := os.Stat(target); os.IsNotExist(err) {
+		target = os.ExpandEnv("$HOME/Library/Application Support/Google/Chrome")
+	}
+
 	if len(flag.Args()) >= 1 {
 		target = flag.Args()[0]
 	}
